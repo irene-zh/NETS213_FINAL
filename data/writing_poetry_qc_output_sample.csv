@@ -1,0 +1,12 @@
+﻿title,first_line,keyword1,keyword2,keyword3,mood,crowdsourced_poem,identified_mood,is_english,embodies_original
+INVITATION (Where the Sidewalk Ends),"If you are a dreamer, come in,",dream,goal,wish,happy,"If you are a dreamer, come in,
+Come in and dream,
+Dream about the future,
+About your wishes and hopes
+Before the sidewalk ends.",happy,TRUE,TRUE
+INVITATION (Where the Sidewalk Ends),"If you are a dreamer, come in,",dream,goal,wish,happy,"If you are a dreamer, come in,
+where you can daydream freely.
+This is an invitation
+To wish for your goals
+To walk the sidewalk
+Before the dream ends.",neutral,TRUE,FALSE
