@@ -9,75 +9,68 @@ Here's a list of what we'll be doing.
 * (3) Quality control phases. After each poem-writing phase, get workers to verify that the poems are well written. This is to filter out any spammy submitted HITs. We'll ask workers if the written poems fit the given keywords, and if the poems make sense.
 * (2) Final election. Get workers to vote on the best poems. This should be easy, although to make sure that workers aren't simply clicking through the HITs as rapidly as possible, we'll force the workers to give us a reason for why they liked or didn't like a poem.
 
-===============
 
-Data Format:
 
-Compiling Poetry
-(Input to Aggregation Module)
-{
-	title: String
-	poem: String
-}
+### Data Format:
 
-Describing Poetry
-(Output from Aggregation Module)
-{
-	title: String
-	first_line: String
-	keyword1: String
-	keyword2: String
-	keyword3: String
-	mood: String
-}
+**Compiling Poetry (Input to Aggregation Module)**
+```
+title: String
+poem: String
+```
 
-Writing Poetry
-(Input to Quality Control Module)
-{
-	title: String
-	first_line: String
-	keyword1: String
-	keyword2: String
-	keyword3: String
-	mood: String
-	crowdsourced_poem: String
-}
+**Describing Poetry(Output from Aggregation Module)**
+```	
+title: String
+first_line: String
+keyword1: String
+keyword2: String
+keyword3: String
+mood: String
+```
 
-Writing Poetry
-(Output from Quality Control Module)
-{
-	title: String
-	first_line: String
-	keyword1: String
-	keyword2: String
-	keyword3: String
-	mood: String
-	crowdsourced_poem: String
-	identified_mood: String
-	is_english: Boolean
-	embodies_original: Boolean
-}
+**Writing Poetry (Input to Quality Control Module)**
+```
+title: String
+first_line: String
+keyword1: String
+keyword2: String
+keyword3: String
+mood: String
+crowdsourced_poem: String
+```
 
-Evaluating Crowdsourced Poetry
-(Input to Aggregation Module)
-{
-	title: String
-	original_poem: String
-	crowdsourced_poem: String
-}
+**Writing Poetry (Output from Quality Control Module)**
+```
+title: String
+first_line: String
+keyword1: String
+keyword2: String
+keyword3: String
+mood: String
+crowdsourced_poem: String
+identified_mood: String
+is_english: Boolean
+embodies_original: Boolean
+```
 
-Evaluating Crowdsourced Poetry
-(Input to Quality Control Module)
-{
-	title: String
-	vote: String
-	explanation: String
-}
+**Evaluating Crowdsourced Poetry (Input to Aggregation Module)**
+```
+title: String
+original_poem: String
+crowdsourced_poem: String
+```
 
-Evaluating Crowdsourced Poetry
-(Output from Quality Control/Aggregation Module)
-{
-	title: String
-	original_votes: Number
-	crowdsourced_votes: Number
-}
+**Evaluating Crowdsourced Poetry (Input to Quality Control Module)**
+```
+title: String
+vote: String
+explanation: String
+```
+
+**Evaluating Crowdsourced Poetry (Output from Quality Control/Aggregation Module)**
+```
+title: String
+original_votes: Number
+crowdsourced_votes: Number
+````
