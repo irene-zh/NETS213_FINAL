@@ -54,13 +54,6 @@ is_english: Boolean
 embodies_original: Boolean
 ```
 
-**Evaluating Crowdsourced Poetry (Input to Aggregation Module)**
-```
-title: String
-original_poem: String
-crowdsourced_poem: String
-```
-
 **Evaluating Crowdsourced Poetry (Input to Quality Control Module)**
 ```
 title: String
@@ -68,9 +61,20 @@ vote: String
 explanation: String
 ```
 
-**Evaluating Crowdsourced Poetry (Output from Quality Control/Aggregation Module)**
+**Evaluating Crowdsourced Poetry (Output from Quality Control Module)**
 ```
 title: String
-original_votes: Number
-crowdsourced_votes: Number
+vote: String
 ````
+
+**Evaluating Crowdsourced Poetry (Input to Aggregation Module)**
+```
+title: String
+vote: Integer
+```
+
+**Evaluating Crowdsourced Poetry (Output to Aggregation Module)**
+```
+title: String
+winner: Integer
+```
