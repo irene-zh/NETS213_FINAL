@@ -21,7 +21,7 @@ with open(le_file, 'r') as file:
 		writer = csv.writer(aggregate, delimiter=',')
 
 		next(reader)
-		writer.writerow(['title', 'best_poem'])
+		writer.writerow(['title', 'winner'])
 		votes = {}
 		for line in reader:
 			poem_id = line[0]
