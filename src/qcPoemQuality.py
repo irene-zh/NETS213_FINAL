@@ -1,12 +1,10 @@
 import csv
 import random
 
-le_file = "hallo.csv"
-la_file = "goodbai.csv"
-letters='qwertyuiopasdfghjklzxcvbnm'
+input_file = "raw_poem_quality_data.csv"
+output_file = "qc_poem_quality_data.csv"
 num_poems = 10
 votes_per_poem = 11
-length_threshold = 20
 random.seed(213)
 
 ### sample results from QC HIT
