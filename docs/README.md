@@ -49,19 +49,30 @@ embodies_mood: Boolean
 The quality control HIT results will be fed into our own quality control module that will just take the majority vote on all categories. It will output a `csv` with the same columns as the input. An example output file is [here](../data/write_poem_qc_results.csv). 
 
 #### Step 4: Evaluate the poems.
-When the poems are completed, we compare them to the original Shel Silverstein through another HIT (#4 in HIT designs) by asking the crowd to vote. Each original poem will be matched with a crowdsourced poem, so the input to this HIT would look like [this](../data/evaluating_poetry_agg_input_sample.csv). Sample results of this HIT can be found [here](). It has the columns:
-
-After quality control, the results 
-
-**Evaluating Crowdsourced Poetry (Input to Quality Control Module)**
+When the poems are completed, we compare them to the original Shel Silverstein through another HIT (#4 in HIT designs) by asking the crowd to vote. Each original poem will be matched with a crowdsourced poem, so the input to this HIT would look like [this](../data/evaluating_poetry_agg_input_sample.csv). Sample results of this HIT can be found [here](../data/raw_poem_votes.csv). It has the columns:
 ```
 title: String
 vote: Integer
 explanation: String
 ```
-
-**Evaluating Crowdsourced Poetry (Output from Quality Control Module)**
+where the integer vote would represent which poem they chose. We can enforce that 0 is always original and 1 is always crowdsourced, and just randomize how they'd appear on the HIT.
+After quality control, the results would be a csv that looks like [this](../data/poem_votes.csv). 
 ```
 title: String
 vote: Integer
 ````
+
+### Source Code
+
+We have a few quality control and aggregation modules as python files in our [src folder](../src). So what are they?
+
+[src/aggregateKeywordsAndMood.py](../src/aggregateKeywordsAndMood.py) aggregates 3 keywords and 1 mood for each poem.
+
+[src/qcPoemQuality.py](../src/qcPoemQuality.py) is quality control for the poem quality intermediately.
+
+[src/qcBestPoemVotes.py](../src/qcBestPoemVotes.py) is quality control where we filter out all submissions with an invalid answer for "why"?
+
+[src/aggregateBestPoemVotes.py](../src/aggregateBestPoemVotes.py) is our aggregation module for getting the best poems by taking a majority.
+
+
+
