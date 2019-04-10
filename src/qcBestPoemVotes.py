@@ -1,8 +1,8 @@
 import csv
 import random
 
-le_file = "hallo.csv"
-la_file = "goodbai.csv"
+input_file = "raw_poem_votes.csv"
+output_file = "poem_votes.csv"
 letters='qwertyuiopasdfghjklzxcvbnm'
 num_poems = 10
 votes_per_poem = 11
