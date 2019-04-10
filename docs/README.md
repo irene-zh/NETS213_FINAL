@@ -32,24 +32,13 @@ mood: String
 **Writing Poetry (Input to Quality Control Module)**
 ```
 title: String
-first_line: String
-keyword1: String
-keyword2: String
-keyword3: String
-mood: String
-crowdsourced_poem: String
+is_english: Boolean
+embodies_original: Boolean
 ```
 
 **Writing Poetry (Output from Quality Control Module)**
 ```
 title: String
-first_line: String
-keyword1: String
-keyword2: String
-keyword3: String
-mood: String
-crowdsourced_poem: String
-identified_mood: String
 is_english: Boolean
 embodies_original: Boolean
 ```
