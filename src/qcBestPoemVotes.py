@@ -10,7 +10,7 @@ length_threshold = 20
 random.seed(213)
 
 ### sample votes for best poem
-with open(le_file, 'w') as file:
+with open(input_file, 'w') as file:
 	writer = csv.writer(file, delimiter=',')
 	writer.writerow(['title', 'vote', 'explanation'])
 	for i in range(num_poems):
@@ -21,8 +21,8 @@ with open(le_file, 'w') as file:
 				comment += letters[random.randrange(26)]
 			writer.writerow(['poem%d' % i, random.randrange(2), comment])
 
-with open(le_file, 'r') as file:
-	with open(la_file, 'w') as qc:
+with open(input_file, 'r') as file:
+	with open(output_file, 'w') as qc:
 		reader = csv.reader(file, delimiter=',')
 		writer = csv.writer(qc, delimiter=',')
 
