@@ -1,0 +1,74 @@
+<head><!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script></head>
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+    <p>
+      <strong>Instructions: </strong>
+      You will be given a poem to read. 
+    </p>
+    <p>
+      Read the following poem. 
+      Then, pick out three key words from the poem and write them in distrinct boxes. 
+      If someone were to see these three words or phrases, they should understand the
+      subject and context of the poem. Please choose the one mood that best encompasses the poem. 
+      <br>
+      Lastly, choose the tone/mood that best encompasses the poem.
+      If the poem has two moods, pick the one you, such as happy and funny,
+      feel is strongest.
+    </p>
+    
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <p><strong>${Title}</strong></p>
+            <p>${Poem}</p>
+            
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+              <label class="control-label" for="keywords">Key words</label>
+              <p>Please enter three unique keywords from the poem.</p>
+              <label class="control-label" for="keyword1">Keyword 1</label>  
+              <input id="keyword1" name="keyword1" type="text" placeholder="type your keyword here" class="form-control input-md" required="">
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="control-label" for="keyword2">Keyword 2</label>  
+              <input id="keyword2" name="keyword2" type="text" placeholder="type your keyword here " class="form-control input-md" required="">
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="control-label" for="keyword3">Keyword 3</label>  
+              <input id="keyword3" name="keyword3" type="text" placeholder="type your keyword here" class="form-control input-md" required="">
+            </div>
+            
+            <!-- Select Mood -->
+            <div class="form-group">
+              <label class="control-label" for="mood">Select a Mood</label>
+                <select id="mood" name="mood" class="form-control">
+                  <option value="Neutral">Neutral</option>
+                  <option value="Sad">Sad</option>
+                  <option value="Funny">Funny</option>
+                  <option value="Happy">Happy</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    
+</crowd-form>
