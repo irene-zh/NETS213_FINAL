@@ -19,7 +19,7 @@ All the data is located in the [data](../data) directory. The data we start with
 The poems have been gathered. Find them [here](../data/poems.txt)! We attribute them to this lovely [website](http://thewhynot100.blogspot.com/2014/05/46-short-and-sweet-shel-silverstein.html). 
 
 #### Step 2: Describe the poems.
-We will post HITs (#1 in HIT designs) that will ask the crowd to come up with 3 keywords and a mood for each poem. The results of the HIT will be inputted into our aggregation module. A sample file that could represent these results is [here](../data/describe_poem_HIT_results.csv). It will have the following columns 
+We will post HITs (#1 in HIT designs) that will ask the crowd to come up with 3 keywords and a mood for each poem. The results of the HIT will be inputted into our aggregation module. A sample file that could represent these results is [here](../data/sample/describe_poem_HIT_results.csv). It will have the following columns 
 ```	
 title: String
 poem: String
@@ -28,7 +28,7 @@ keyword2: String
 keyword3: String
 mood: String
 ```
-Our aggregation module for this step will take the top three most frequent keywords and top mood for each poem and output that into a file that would look like [this](../data/describe_poem_agg_output.csv), with the following columns:
+Our aggregation module for this step will take the top three most frequent keywords and top mood for each poem and output that into a file that would look like [this](../data/sample/describe_poem_agg_output.csv), with the following columns:
 ```	
 title: String
 first_line: String
@@ -39,24 +39,24 @@ mood: String
 ```
 
 #### Step 3: Write the poems.
-The crowd will write the poems iteratively (one stanza at a time), and for each iteration, we will have HITs (#3 in HIT designs) to filter out trashy poems as a way to control quality. A sample input file to this HIT is [here](../data/writing_poetry_qc_input_sample.csv). Each HIT will decide whether a crowdsourced poem is English (not random words), embodies the 3 keywords, and embodies the mood. The result file would have many columns and look like [this](../data/writing_poetry_qc_output_sample.csv), but we only really care about a few columns. We still have to put in work to condense this file, but a condensed sample result file would look like [this](../data/write_poem_qc_HIT_results.csv). It has the columns:
+The crowd will write the poems iteratively (one stanza at a time), and for each iteration, we will have HITs (#3 in HIT designs) to filter out trashy poems as a way to control quality. A sample input file to this HIT is [here](../data/sample/writing_poetry_qc_input_sample.csv). Each HIT will decide whether a crowdsourced poem is English (not random words), embodies the 3 keywords, and embodies the mood. The result file would have many columns and look like [this](../data/sample/writing_poetry_qc_output_sample.csv), but we only really care about a few columns. We still have to put in work to condense this file, but a condensed sample result file would look like [this](../data/sample/write_poem_qc_HIT_results.csv). It has the columns:
 ```
 title: String
 is_english: Boolean
 embodies_keywords: Boolean
 embodies_mood: Boolean
 ```
-The quality control HIT results will be fed into our own quality control module that will just take the majority vote on all categories. It will output a `csv` with the same columns as the input. An example output file is [here](../data/write_poem_qc_results.csv). 
+The quality control HIT results will be fed into our own quality control module that will just take the majority vote on all categories. It will output a `csv` with the same columns as the input. An example output file is [here](../data/sample/write_poem_qc_results.csv). 
 
 #### Step 4: Evaluate the poems.
-When the poems are completed, we compare them to the original Shel Silverstein through another HIT (#4 in HIT designs) by asking the crowd to vote. Each original poem will be matched with a crowdsourced poem, so the input to this HIT would look like [this](../data/evaluating_poetry_agg_input_sample.csv). Sample results of this HIT can be found [here](../data/raw_poem_votes.csv). It has the columns:
+When the poems are completed, we compare them to the original Shel Silverstein through another HIT (#4 in HIT designs) by asking the crowd to vote. Each original poem will be matched with a crowdsourced poem, so the input to this HIT would look like [this](../data/sample/evaluating_poetry_agg_input_sample.csv). Sample results of this HIT can be found [here](../data/sample/raw_poem_votes.csv). It has the columns:
 ```
 title: String
 vote: Integer
 explanation: String
 ```
 where the integer vote would represent which poem they chose. We can enforce that 0 is always original and 1 is always crowdsourced, and just randomize how they'd appear on the HIT.
-After quality control, the results would be a csv that looks like [this](../data/poem_votes.csv). 
+After quality control, the results would be a csv that looks like [this](../data/sample/poem_votes.csv). 
 ```
 title: String
 vote: Integer
