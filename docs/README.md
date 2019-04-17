@@ -19,7 +19,7 @@ title: String
 poem: String
 ```
 
-**Describing Poetry(Output from Aggregation Module)**
+**Describing Poetry (Output from Aggregation Module)**
 ```	
 title: String
 first_line: String
