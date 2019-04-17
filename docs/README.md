@@ -19,7 +19,8 @@ All the data is located in the [data](../data) directory. The data we start with
 The poems have been gathered. Find them [here](../data/poems.txt)! We attribute them to this lovely [website](http://thewhynot100.blogspot.com/2014/05/46-short-and-sweet-shel-silverstein.html). 
 
 #### Step 2: Describe the poems.
-We will post HITs (#1 in HIT designs) that will ask the crowd to come up with 3 keywords and a mood for each poem. The results of the HIT will be inputted into our aggregation module. A sample file that could represent these results is [here](../data/sample/describe_poem_HIT_results.csv). It will have the following columns ```	
+We will post HITs (#1 in HIT designs) that will ask the crowd to come up with 3 keywords and a mood for each poem. The results of the HIT will be inputted into our aggregation module. A sample file that could represent these results is [here](../data/sample/describe_poem_HIT_results.csv). It will have the following columns 
+```	
 title: String
 poem: String
 keyword1: String
