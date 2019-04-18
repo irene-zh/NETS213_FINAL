@@ -1,0 +1,129 @@
+<head><!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script></head>
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+    <p>
+    <strong>Instructions: </strong>
+    You will be evaluating a poem. <br>
+      For each (potentially incomplete) poem, evaluate:
+    </p>
+    <ul>
+        <li>Is it English?</li>
+        <li>Does it encompass the Keywords?</li>
+        <li>Does it reflect the mood?</li>
+        <li>Is it a good poem so far?</li>
+    </ul>
+    
+    
+    <div class="row">
+        <div class="col-sm-5">
+            <!--<p><strong>${title}</strong></p>-->
+            <h3>Read this Poem: </h3>
+            <p>${first_line}</p>
+            <p>${line1}</p>
+            <p>${line2}</p>
+            <p>${line3}</p>
+            
+            <hr>
+            <!--Keywords -->
+            <p><strong>Required Keywords:</strong></p>
+            <p>${keyword1}</p>
+            
+            <!-- Text input-->
+            <p>${keyword2}</p>
+            
+            <!-- Text input-->
+            <p>${keyword3}</p>
+            
+            <!-- Select Mood -->
+            <p><strong>Required Mood:</strong></p>
+            <p>${mood}</p>
+            
+        </div>
+        <div class="col-sm-5">
+            <h3>Answer the following questions:</h3>
+           <!-- Multiple Radios (inline) -->
+            <div class="form-group">
+              <label class="control-label" for="isEnglish">Is it English?</label>
+
+                <label class="radio-inline" for="isEnglish-0">
+                  <input type="radio" name="isEnglish" id="isEnglish-0" value="yes" checked="checked">
+                  yes
+                </label> 
+                <label class="radio-inline" for="isEnglish-1">
+                  <input type="radio" name="isEnglish" id="isEnglish-1" value="no">
+                  no
+                </label>
+            </div>
+    
+            <!-- Multiple Checkboxes -->
+            <div class="form-group">
+              <label class=" control-label" for="whichKeywords">Which keywords does it encompass?</label>
+
+              <div class="checkbox">
+                <label for="whichKeywords-0">
+                  <input type="checkbox" name="whichKeywords" id="whichKeywords-0" value="key1">
+                  ${keyword1}
+                </label>
+            	</div>
+              <div class="checkbox">
+                <label for="whichKeywords-1">
+                  <input type="checkbox" name="whichKeywords" id="whichKeywords-1" value="key2">
+                  ${keyword2}
+                </label>
+            	</div>
+              <div class="checkbox">
+                <label for="whichKeywords-2">
+                  <input type="checkbox" name="whichKeywords" id="whichKeywords-2" value="key3">
+                  ${keyword3}
+                </label>
+            	</div>
+            </div>
+            
+            <!-- Multiple Radios (inline) -->
+            <div class="form-group">
+              <label class="control-label" for="reflectsMood">Does it reflect the mood?</label>
+
+                <label class="radio-inline" for="reflectsMood-0">
+                  <input type="radio" name="reflectsMood" id="reflectsMood-0" value="yes" checked="checked">
+                  yes
+                </label> 
+                <label class="radio-inline" for="reflectsMood-1">
+                  <input type="radio" name="reflectsMood" id="reflectsMood-1" value="no">
+                  no
+                </label>
+            </div>
+            
+            <!-- Multiple Radios (inline) -->
+            <div class="form-group">
+              <label class=" control-label" for="isGoodPoem">Do you think this is a good poem?</label>
+
+                <label class="radio-inline" for="isGoodPoem-0">
+                  <input type="radio" name="isGoodPoem" id="isGoodPoem-0" value="yes" checked="checked">
+                  yes
+                </label> 
+                <label class="radio-inline" for="isGoodPoem-1">
+                  <input type="radio" name="isGoodPoem" id="isGoodPoem-1" value="no">
+                  no
+                </label>
+
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    
+</crowd-form>
