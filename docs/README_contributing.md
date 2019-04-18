@@ -19,7 +19,11 @@ After we are done with our crowdsourced poetry, we will then post HITs that will
 If you have any questions feel free to contact any of the below team members:
 
 [Priya Gupta](mailto:guppriya@seas.upenn.edu)
+
 [Weizhen Sheng](mailto:wsheng@seas.upenn.edu)
+
 [William Wang](mailto:wangwill@seas.upenn.edu)
+
 [Jane Xu](mailto:xuyuan@seas.upenn.edu)
+
 [Irene Zhang](mailto:iyzhang@seas.upenn.edu)
