@@ -1,0 +1,66 @@
+<head><!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script></head>
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+    <p>
+      <strong>Instructions: </strong>
+      Which poem do you prefer?
+    </p>
+    <p>
+        Read both poems and choose the one you think is better. You <i>must</i> give a reason why.
+    </p>
+    
+    
+    <div class="row">
+        <div class="col-sm-6">
+            <!--<p><strong>${Title}</strong></p>-->
+            <h3>Poem 1</h3>
+            <p>${Poem1}</p>
+            
+        </div>
+        <div class="col-sm-6">
+            <h3>Poem 2</h3>
+            <p>${Poem2}</p>
+        </div>
+    </div>
+        
+    <div class="row">
+        <div class="col-sm-6">
+        <div class="form-group">
+          <label class="control-label" for="whichIsBetter">Which Poem is Better?</label>
+
+            <label class="radio-inline" for="whichIsBetter-0">
+              <input type="radio" name="whichIsBetter" id="whichIsBetter-0" value="poem1" checked="checked">
+              Poem 1
+            </label> 
+            <label class="radio-inline" for="whichIsBetter-1">
+              <input type="radio" name="whichIsBetter" id="whichIsBetter-1" value="poem2">
+              Poem 2
+            </label>
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="control-label" for="reason">Why?</label>  
+
+          <input id="reason" name="reason" type="text" placeholder="type your reason here" class="form-control input-md">
+
+        </div>
+        </div>
+    </div>
+    
+    
+</crowd-form>
