@@ -19,7 +19,7 @@ This script reads in a .csv file containing Turker inputs on our Writing Poetry 
 ```
 qcBestPoemVotes.py
 ```
-This script reads in a .csv file containing Turker inputs on our Voting HIT and formats it into a cleaner .csv file. The input file includes the fields 'title', 'vote', and 'explanation', and we output a file with only 'title' and 'vote' fields.
+This script reads in a .csv file containing Turker inputs on our Voting HIT and formats it into a cleaner .csv file. The input file includes the fields 'title', 'vote', and 'explanation', and we output a file with only 'title' and 'vote' fields. We perform quality control by filtering out Turkers who didn't provide an answer exceeding a length threshold for the 'explanation' field.
 
 ```
 aggregateBestPoemVotes.py
