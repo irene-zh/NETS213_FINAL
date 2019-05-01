@@ -2,7 +2,7 @@ import sys
 import csv
 
 if len(sys.argv) < 3:
-    print('Usage: python3 formatPoemsFromCSV.py <HIT_output.csv> <output.txt>')
+    print('Usage: python3 getPoemsFromCSV.py <HIT_output.csv> <output.txt>')
     exit()
 
 input_file = sys.argv[1]
