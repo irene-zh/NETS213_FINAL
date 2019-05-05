@@ -1,0 +1,82 @@
+<head><!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script></head>
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+    <p>
+      <strong>Instructions: </strong>
+      You will be continuing a poem. 
+    </p>
+    <p>
+      Read the following keywords and mood. 
+      We will give you the first line of the poem. 
+      In the lines provided, you will write the next stanza, (4 lines) of a 
+      poem with the required mood
+      using the 3 suggested keywords. 
+    </p>
+    
+    
+    <div class="row">
+        <div class="col-sm-4">
+            <!--<p><strong>${Title}</strong></p>-->
+            
+            <!--Keywords -->
+            <p><strong>Poem Keywords:</strong></p>
+            <p>${keyword1}</p>
+            
+            <!-- Text input-->
+            <p>${keyword2}</p>
+            
+            <!-- Text input-->
+            <p>${keyword3}</p>
+            
+            <!-- Select Mood -->
+            <p><strong>Poem mood:</strong></p>
+            <p>${mood}</p>
+            
+        </div>
+        <div class="col-sm-8">
+           <!-- Text input-->
+           <p><strong>First Line:</strong></p>
+            <p>${first_line}</p>
+            <p>${line1}</p>
+            <p>${line2}</p>
+            <p>${line3}</p>
+            
+            <div class="form-group">
+              <input id="line1" name="line4" type="text" placeholder="poem line 1" class="form-control input-md" required="">
+
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <input id="line2" name="line5" type="text" placeholder="poem line 2" class="form-control input-md" required="">
+            </div>
+            
+            <div class="form-group">
+              <input id="line2" name="line6" type="text" placeholder="poem line 3" class="form-control input-md" required="">
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <input id="line3" name="line7" type="text" placeholder="poem line 4" class="form-control input-md" required="">
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    
+</crowd-form>
