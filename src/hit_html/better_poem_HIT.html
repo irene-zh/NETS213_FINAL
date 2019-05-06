@@ -20,7 +20,8 @@
       Which poem do you prefer?
     </p>
     <p>
-        Read both poems and choose the one you think is better. You <i>must</i> give a reason why.
+        Read both poems and choose the one you think is better. Also determine whether or not the poem rhymes. 
+        Check both boxes if both poems rhyme, neither if neither poem rhymes. You <i>must</i> give a reason why you think one poem is better. 
     </p>
     
     
@@ -28,35 +29,59 @@
         <div class="col-sm-6">
             <!--<p><strong>${Title}</strong></p>-->
             <h3>Poem 1</h3>
-            <p>${Poem1}</p>
+            <p>${Poem}</p>
             
         </div>
         <div class="col-sm-6">
             <h3>Poem 2</h3>
-            <p>${Poem2}</p>
+            <!--<p><strong>${Title2}</strong></p>-->
+            <p>${first_line}</p>							
+            <p>${line1}</p>
+            <p>${line2}</p>
+            <p>${line3}</p>
+            <br>
+            <p>${line4}</p>
+            <p>${line5}</p>
+            <p>${line6}</p>
+            <p>${line7}</p>
         </div>
     </div>
         
     <div class="row">
         <div class="col-sm-6">
+            <!-- Multiple Checkboxes (inline) -->
         <div class="form-group">
-          <label class="control-label" for="whichIsBetter">Which Poem is Better?</label>
-
-            <label class="radio-inline" for="whichIsBetter-0">
-              <input type="radio" name="whichIsBetter" id="whichIsBetter-0" value="poem1" checked="checked">
+          <label class="control-label" for="isRhyming">Which Poem Rhymes?</label>
+            <label class="checkbox-inline" for="isRhyming-0">
+              <input type="checkbox" name="isRhyming" id="isRhyming-0" value="Poem 1">
               Poem 1
-            </label> 
-            <label class="radio-inline" for="whichIsBetter-1">
-              <input type="radio" name="whichIsBetter" id="whichIsBetter-1" value="poem2">
+            </label>
+            <label class="checkbox-inline" for="isRhyming-1">
+              <input type="checkbox" name="isRhyming" id="isRhyming-1" value="Poem 2">
               Poem 2
             </label>
         </div>
+        <div class="form-group">
+          <label class="control-label" for="whichIsBetter">Rate each poem.</label>
+          
+            <div class="slidecontainer">
+              <input name="poem1rating" type="range" min="1" max="10" value="5" class="slider" id="poem1">
+              Poem 1
+            </div>
+            
+            <div class="slidecontainer">
+              <input name="poem2rating" type="range" min="1" max="10" value="5" class="slider" id="poem2">
+              Poem 2
+            </div>
+        </div>
+        
+        
         
         <!-- Text input-->
         <div class="form-group">
-          <label class="control-label" for="reason">Why?</label>  
+          <label class="control-label" for="reason">Explain your ratings.</label>  
 
-          <input id="reason" name="reason" type="text" placeholder="type your reason here" class="form-control input-md">
+          <input id="reason" name="reason" type="text" placeholder="REQUIRED" class="form-control input-md">
 
         </div>
         </div>
